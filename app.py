@@ -60,5 +60,17 @@ def get_products():
     return jsonify([product.to_dict() for product in products])
 
 # Get product by id 
-# @app.route('/products/<int:id>', methods=["GET"])
-# def get_product(id):
+@app.route('/products/<int:id>', methods=["GET"])
+def get_product(id):
+    product = Product.query.get(id)
+
+    if product: 
+        return jsonify(product.to_dict())
+    
+    else:
+        return jsonify({
+            'error': 'not found'
+        }), 404
+    
+
+
