@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, request, jsonify
+# import SQLAlchemy
 import os
 
 app = Flask(__name__)
@@ -13,10 +14,10 @@ db = SQLAlchemy(app)
 class Product(db.Model):
     __tablename__ = 'products'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), nullalbe=False)
-    description = db.Column(db.String(255), nullalbe=True)
-    price = db.Column(db.Float, nullable=False)
-    category = db.Column(db.String(50),nullable=False)
+    name = db.Column(db.String(80), nullable=True)
+    description = db.Column(db.String(255), nullable=True)
+    price = db.Column(db.Float, nullable=True)
+    category = db.Column(db.String(50),nullable=True)
 
     def to_dict(self):
         return {
