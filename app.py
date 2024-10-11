@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, request, jsonify
-
+import os
 
 app = Flask(__name__)
 
@@ -72,5 +72,10 @@ def get_product(id):
             'error': 'not found'
         }), 404
     
+if __name__ == "__main__":
+    if not os.path.exists('products.db'):
+        db.create_all()
+    app.run(debug=True)
+
 
 
