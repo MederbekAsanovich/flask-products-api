@@ -46,10 +46,11 @@ Create the SQLite database:
 
 The database will be automatically created when you run the application for the first time, or you can manually create it using:
 
-``````
+```
 ```>>> from app import db
 >>> db.create_all()
->>> exit()```
+>>> exit()
+```
 
 Running the Application
 Start the Flask server:
@@ -65,7 +66,8 @@ The server will run on ```http://localhost:5000.``` You can now use tools like P
 API Endpoints
 Create a new product (POST /products):
 
-```URL: http://localhost:5000/products
+```
+URL: http://localhost:5000/products
 
 Method: POST
 
@@ -90,11 +92,13 @@ Response: Returns the created product's details:
     "description": "A high-performance laptop",
     "price": 999.99,
     "category": "Electronics"
-}```
+}
+```
 
 Get a list of products (GET /products):
 
-```URL: http://localhost:5000/products
+```
+URL: http://localhost:5000/products
 
 Method: GET
 
@@ -102,7 +106,8 @@ Query Parameters:
 
 category (optional): Filter products by category.
 sort (optional): Sort products by price (?sort=price).
-Example: http://localhost:5000/products?category=Electronics&sort=price```
+Example: http://localhost:5000/products?category=Electronics&sort=price
+```
 
 Response: Returns a list of products:
 
@@ -116,27 +121,33 @@ Response: Returns a list of products:
     }
 ]
 Get a specific product (GET /products/
-):```
+):
+```
 
-```URL: http://localhost:5000/products/1
+```
+URL: http://localhost:5000/products/1
 
 Method: GET
 
-Response: Returns the product's details:```
+Response: Returns the product's details:
+```
 
-```{
+```
+{
     "id": 1,
     "name": "Laptop",
     "description": "A high-performance laptop",
     "price": 999.99,
     "category": "Electronics"
-}```
+}
+```
 Error Handling: If the product with the specified ID is not found, it returns a 404 status code with a message:
 
 
 ```{
     "error": "Product not found"
-}```
+}
+```
 Deleting All Products (Manual Method)
 To delete all products from the database manually:
 
@@ -146,9 +157,11 @@ Open a Python shell in the project directory:
 python
 Delete all products:
 
-```from app import db, Product
+```
+from app import db, Product
 db.session.query(Product).delete()
-db.session.commit()```
+db.session.commit()
+```
 Exit the shell:
 ```exit()```
 
