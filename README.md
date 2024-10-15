@@ -152,7 +152,16 @@ db.session.commit()```
 Exit the shell:
 ```exit()```
 
-Video Description of Work
-Video link
+## Screenshots 
+Adding product with row data
+![ADDING Product](screenshots/adding_product_endpoint.png)
+
+Retrieving Product
+![ADDING Product](screenshots/retrieving_product_endpoint.png)
+
+
+
+## Video Description of Work
+https://drive.google.com/file/d/1VnNjyIIifDZYFUuYSD1vRAPsrGohXdAi/view?usp=drive_link
 
 
